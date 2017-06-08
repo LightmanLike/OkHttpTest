@@ -15,14 +15,13 @@ import okhttp3.Response;
  */
 
 public class HttpTool {
-    private final static int HELP = 1 ;
     public static final MediaType JSON = MediaType.parse("application/json; charset=utf-8");
     private static String txt = "";
-    public static Response PostStr(String json, String post_path) {
+    public static Response PostStr(String json, final String post_path) {
         //创建okHttpClient对象
         OkHttpClient mOkHttpClient = new OkHttpClient();
         Request request = new Request.Builder()
-                .url("post_path")
+                .url(post_path)
                 .post(RequestBody.create(JSON, json)).addHeader("token", "helloworld")
                 .build();
 

@@ -43,7 +43,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                     rmsg.what = GET;
                     mHandler.sendMessage(rmsg);
                     try {
-                        got_msg += HttpTool.GetStr(get_path);
+                        got_msg = HttpTool.GetStr(get_path);
                         Thread.sleep(2000);
                     } catch (InterruptedException e) {
                         Thread.currentThread().interrupt();
